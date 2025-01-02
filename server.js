@@ -13,3 +13,9 @@ app.use(errorHandler)
 app.listen(port, () => {
     console.log("server running on ",port)
 })
+
+
+// ePnzTrkNEtWsfvHu this is the passworkd fo rthe mongo
+// MONGO_URL=mongodb+srv://harshofficialrawat:ePnzTrkNEtWsfvHu@contactdirectorynodejs.wc0ie.mongodb.net/ContactDirectory?retryWrites=true&w=majority&appName=ContactDirectoryNodeJS
+// harshofficialrawat is the username in mongodb
+// harsh12345 is the secret tooken in env

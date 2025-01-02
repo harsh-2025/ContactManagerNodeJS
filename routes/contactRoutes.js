@@ -1,8 +1,12 @@
 const express = require("express");
 const router = express.Router();
-const {getContact, createContact, getContactById, updateContact, deleteContact}=require("../controllers/contactController")
+const { getContact, createContact, getContactById, updateContact, deleteContact } = require("../controllers/contactController");
+const { validateToken } = require("../middleware/validateTokenHandler");
+
+router.use(validateToken)
+
 router.route("/").get(getContact)
-router.route("/").get(getContact).post(createContact)
+// router.route("/").get(getContact).post(createContact)
 
 
 
@@ -18,7 +22,7 @@ router.route("/").get(getContact).post(createContact)
 // router.route("/:id").delete((req, res) => {
 //     res.status(200).json({message:`{Delete  contacts route for ${req.params.id}}`})
 // })
-// router.route("/").post(createContact)
+router.route("/").post(createContact)
 router.route("/:id").get(getContactById)
 router.route("/:id").put(updateContact)
 router.route("/:id").delete(deleteContact)
